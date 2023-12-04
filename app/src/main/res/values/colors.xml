@@ -6,4 +6,7 @@
     <color name="button">#86A789</color>
     <color name="darker">#003B1D</color>
     <color name="stroke">#007136</color>
+    <color name="ellipse_12_color">#B2C8BA</color>
+    <color name="rectangle_23_color">#86A789</color>
+    <color name="ellipse_13_color">#D2E3C8</color>
 </resources>
