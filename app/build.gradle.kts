@@ -40,6 +40,12 @@ android {
 
 dependencies {
 
+    //datastore
+    implementation("androidx.datastore:datastore-preferences:1.0.0")
+
+    //corountines
+    implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.6.1")
+
     implementation("androidx.core:core-ktx:1.9.0")
     implementation ("de.hdodenhof:circleimageview:2.2.0")
     implementation("androidx.appcompat:appcompat:1.6.1")
