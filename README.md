@@ -1,8 +1,8 @@
 # Capstone Project Healtheats
 
-Project Name		: [HealthEats]
-Team ID		      : CH2-PS313
-Team Member		  : 
+Project Name		: [HealthEats] \
+Team ID		      : CH2-PS313 \
+Team Member		  : \
 (ML) M200BSX0876 - Layla Indah Pradita [Active]
 (ML) M356BSX0960 - Miftakhul Ilmiyah [Active]
 (ML) M315BSX1851 - Putri Maharani Suta [Active]
