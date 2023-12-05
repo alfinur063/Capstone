@@ -13,8 +13,8 @@ Team Member&nbsp;&nbsp;&nbsp;&nbsp;: \
 \
 Link Github : \
 MD : \
-ML : https://github.com/Ilmiu/capstone_project//\
-CC : https://github.com/yudadh/HealthEatsAPI\
+ML : https://github.com/Ilmiu/capstone_project// \
+CC : https://github.com/yudadh/HealthEatsAPI \
 
 
 
