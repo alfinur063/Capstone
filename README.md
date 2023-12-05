@@ -2,7 +2,7 @@
 
 Project Name&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;[HealthEats] \
 Team ID&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;CH2-PS313 \
-Team Member		  : \
+Team Member&nbsp;&nbsp;&nbsp;&nbsp;: \
 (ML) M200BSX0876 - Layla Indah Pradita [Active] \
 (ML) M356BSX0960 - Miftakhul Ilmiyah [Active] \
 (ML) M315BSX1851 - Putri Maharani Suta [Active] \
@@ -13,8 +13,8 @@ Team Member		  : \
 \\
 Link Github : \
 MD : \
-ML : https://github.com/Ilmiu/capstone_project// \ 
-CC :
+ML : https://github.com/Ilmiu/capstone_project// \\
+CC : https://github.com/yudadh/HealthEatsAPI \
 
 
 
