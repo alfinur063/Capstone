@@ -12,7 +12,7 @@ Team Member&nbsp;&nbsp;&nbsp;&nbsp;: \
 (CC) C014BSY3974 - I Putu Yuda Dharmawan [Active] \
 \
 Link Github : \
-MD : \
+MD : https://github.com/alfinur063/Capstone \
 ML : https://github.com/Ilmiu/capstone_project// \
 CC : https://github.com/yudadh/HealthEatsAPI 
 
