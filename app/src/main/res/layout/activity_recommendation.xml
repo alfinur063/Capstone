@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.recomendation.RecommendationActivity">
+
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/profile_pic"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="36dp"
+        tools:src="@tools:sample/avatars"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/user_name"
+        android:layout_width="200dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="30dp"
+        android:text="Name: "
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/profile_pic"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/user_age"
+        android:layout_width="200dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="30dp"
+        android:text="Age: "
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/profile_pic"
+        app:layout_constraintTop_toBottomOf="@id/user_name" />
+
+    <TextView
+        android:id="@+id/user_gender"
+        android:layout_width="200dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="30dp"
+        android:text="Gender: "
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/profile_pic"
+        app:layout_constraintTop_toBottomOf="@id/user_age" />
+
+
+    <TextView
+        android:id="@+id/title_recommendation"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:text="Hasil Diagnosis"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:textAlignment="center"
+        android:layout_marginTop="40dp"
+        app:layout_constraintTop_toBottomOf="@id/profile_pic"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:id="@+id/name_disasess"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:text="Name of Disease"
+        android:layout_marginTop="20dp"
+        android:textAlignment="center"
+        app:layout_constraintTop_toBottomOf="@id/title_recommendation"/>
+
+    <TextView
+        android:id="@+id/diagnoses"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginStart="24dp"
+        android:text="Diagnoses:"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        app:layout_constraintTop_toBottomOf="@id/name_disasess"/>
+    
+    <TextView
+        android:id="@+id/desc_diagnose"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintTop_toBottomOf="@id/diagnoses"
+        android:layout_margin="16dp"
+        android:text="ini bakalan jadi long text so make sure it will be a nice place to wirte"/>
+
+    <TextView
+        android:id="@+id/title_advice"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginStart="24dp"
+        android:text="Advice:"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        app:layout_constraintTop_toBottomOf="@id/desc_diagnose"/>
+
+    <TextView
+        android:id="@+id/desc_advice"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="several things you might have to do: "
+        android:textStyle="bold"
+        android:textSize="14sp"
+        app:layout_constraintTop_toBottomOf="@id/title_advice"/>
+
+    <TextView
+        android:id="@+id/list_of_advice"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:textSize="14sp"
+        android:text="this page will be long string so make sure it will be a good place \n and it will be free"
+        app:layout_constraintTop_toBottomOf="@id/desc_advice"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/list_rekomendasi_makanan"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="24dp"
+        app:layout_constraintTop_toBottomOf="@id/list_of_advice"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
