@@ -27,7 +27,7 @@ class ApiConfig {
                 .addInterceptor(authInterceptor)
                 .build()
             val retrofit = Retrofit.Builder()
-                .baseUrl("https://story-api.dicoding.dev/v1/")
+                .baseUrl("https://healtheats-backend-vcbwn2seaq-et.a.run.app/users/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .client(client)
                 .build()
