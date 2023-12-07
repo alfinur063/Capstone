@@ -8,6 +8,7 @@ import com.example.capstoneproject.database.preference.UserPreference
 import com.example.capstoneproject.database.response.LoginResponse
 import com.example.capstoneproject.database.response.RegisterResponse
 import com.google.gson.Gson
+import kotlinx.coroutines.flow.Flow
 import retrofit2.HttpException
 import java.util.prefs.Preferences
 
@@ -38,6 +39,26 @@ class Repository private constructor(
             val errorBody = e.response()?.errorBody()?.string()
             val errorResponse = Gson().fromJson(errorBody, RegisterResponse::class.java)
             emit(ResultState.Error(errorResponse.message))
+        }
+    }
+
+    suspend fun saveSession(user: UserModel){
+        preferences.saveSession(user)
+    }
+    fun getSession(): Flow<UserModel> {
+        return preferences.getSession()
+    }
+    suspend fun logout(){
+        preferences.removeSession()
+    }
+
+    companion object{
+        private var instance: Repository? = null
+        fun getInstance(apiService: ApiService, preferences: UserPreference) : Repository{
+            if (instance == null){
+                instance = Repository(apiService, preferences)
+            }
+            return instance!!
         }
     }
 }
