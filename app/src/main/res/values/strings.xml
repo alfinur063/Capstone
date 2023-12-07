@@ -12,4 +12,7 @@
     <string name="login">Login</string>
     <string name="move_to_regis">Not have an account ?</string>
     <string name="click_here_register">Click here</string>
+    <string name="not_found">get your recipe</string>
+    <string name="username">username</string>
+    <string name="describe">Deskripsi makanan\n</string>
 </resources>
