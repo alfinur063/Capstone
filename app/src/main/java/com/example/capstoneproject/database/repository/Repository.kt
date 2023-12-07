@@ -22,6 +22,7 @@ class Repository private constructor(
         try {
             val successResponse = apiService.login(email, password)
             val userModel = UserModel(successResponse.loginResult.name, successResponse.loginResult.token, true)
+            saveSession(userModel)
             emit(ResultState.Success(successResponse))
         } catch (e: HttpException) {
             val errorBody = e.response()?.errorBody()?.string()
