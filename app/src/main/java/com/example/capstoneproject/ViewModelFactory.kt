@@ -5,6 +5,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.example.capstoneproject.database.di.Injection
 import com.example.capstoneproject.database.repository.Repository
+import com.example.capstoneproject.view.login.LoginViewModel
 import com.example.capstoneproject.view.register.RegisterViewModel
 
 class ViewModelFactory(private val repository: Repository):
@@ -15,6 +16,9 @@ class ViewModelFactory(private val repository: Repository):
         return when {
             modelClass.isAssignableFrom(RegisterViewModel::class.java) -> {
                 RegisterViewModel(repository) as T
+            }
+            modelClass.isAssignableFrom(LoginViewModel::class.java) -> {
+                LoginViewModel(repository) as T
             }
             else -> throw IllegalAccessException("Unknown ViewModel Class: "+ modelClass.name)
         }
