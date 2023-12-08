@@ -18,4 +18,5 @@
     <string name="search">search</string>
     <string name="Search">search recipe\n</string>
     <string name="search_hint">name recipe\n</string>
+    <string name="logout">logout</string>
 </resources>
