@@ -15,4 +15,7 @@
     <string name="not_found">get your recipe</string>
     <string name="username">username</string>
     <string name="describe">Deskripsi makanan\n</string>
+    <string name="search">search</string>
+    <string name="Search">search recipe\n</string>
+    <string name="search_hint">name recipe\n</string>
 </resources>
