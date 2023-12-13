@@ -31,7 +31,7 @@ class Repository private constructor(
         }
     }
 
-    fun register(name: String, email: String, password: String) = liveData<ResultState<RegisterResponse>>{
+    fun register(name: String, email: String, password: String) = liveData{
         emit(ResultState.Loading)
         try {
             val successResponse = apiService.register(name, email, password)

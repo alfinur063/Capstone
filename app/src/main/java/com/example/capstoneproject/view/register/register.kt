@@ -33,10 +33,6 @@ class register : AppCompatActivity() {
 
     }
 
-    //create binding to connect register layout to login layout
-
-    //this 2 must have to finish tomorrow
-
     //function to create account
     private fun setUpAction() {
         val username = binding.edRegisterName.text.toString()
@@ -56,7 +52,7 @@ class register : AppCompatActivity() {
                         startActivity(intent)
                     }
                     is ResultState.Error -> {
-                        Toast.makeText(this, "your registet is failed", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this, "your register is failed", Toast.LENGTH_SHORT).show()
                         binding.button.isEnabled = true
                     }
                 }
