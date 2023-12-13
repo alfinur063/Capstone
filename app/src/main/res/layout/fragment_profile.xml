@@ -6,17 +6,26 @@
     android:layout_height="match_parent"
     tools:context=".view.fragment.ui.Profile.ProfileFragment">
 
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/img_avatar"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_margin="5dp"
+        tools:layout_editor_absoluteX="155dp"
+        tools:layout_editor_absoluteY="244dp"
+        tools:src="@tools:sample/avatars"
+        tools:ignore="MissingConstraints" />
+
     <TextView
-        android:id="@+id/text_profile"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
+        android:id="@+id/tv_username"
+        android:layout_width="233dp"
+        android:layout_height="27dp"
+        android:text="@string/username"
         android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="89dp"
+        tools:layout_editor_absoluteY="362dp"
+        tools:ignore="MissingConstraints" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import com.example.capstoneproject.R
 import com.example.capstoneproject.databinding.FragmentSearchBinding
 
 class SearchFragment : Fragment() {
@@ -17,22 +18,13 @@ class SearchFragment : Fragment() {
     // onDestroyView.
     private val binding get() = _binding!!
 
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val searchViewModel =
-            ViewModelProvider(this).get(SearchViewModel::class.java)
-
-        _binding = FragmentSearchBinding.inflate(inflater, container, false)
-        val root: View = binding.root
-
-        val textView: TextView = binding.textSearch
-        searchViewModel.text.observe(viewLifecycleOwner) {
-            textView.text = it
-        }
-        return root
+        return inflater.inflate(R.layout.fragment_search, container, false)
     }
 
     override fun onDestroyView() {
