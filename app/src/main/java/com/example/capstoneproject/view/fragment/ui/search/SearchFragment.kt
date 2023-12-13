@@ -6,14 +6,18 @@ import android.view.Menu
 import android.view.MenuInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.SearchView
-import android.widget.TextView
+import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.capstoneproject.R
 import com.example.capstoneproject.databinding.FragmentSearchBinding
 
 class SearchFragment : Fragment() {
+
+    private lateinit var recyclerView: RecyclerView
+    private lateinit var searchView: SearchView
 
     private var _binding: FragmentSearchBinding? = null
 
@@ -26,8 +30,14 @@ class SearchFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View {
-        return inflater.inflate(R.layout.fragment_search, container, false)
+    ): View? {
+        val view = inflater.inflate(R.layout.fragment_search, container, false)
+
+        recyclerView = view.findViewById(R.id.rv_user)
+        recyclerView.layoutManager = LinearLayoutManager(context)
+
+        setHasOptionsMenu(true)
+        return view
     }
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         inflater.inflate(R.menu.search_menu, menu)
@@ -38,7 +48,6 @@ class SearchFragment : Fragment() {
         searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
                 // Handle the search query submission
-                searchView.clearFocus()
                 return true
             }
 
