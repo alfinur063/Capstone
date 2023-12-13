@@ -30,6 +30,7 @@ class MainActivity : AppCompatActivity() {
 
 
 
+
         val navView: BottomNavigationView = binding.navView
 
         val navController = findNavController(R.id.nav_host_fragment_activity_bottom_bar_navigation)
@@ -51,4 +52,4 @@ class MainActivity : AppCompatActivity() {
 //            }
 //        }
     }
-}
+    }
