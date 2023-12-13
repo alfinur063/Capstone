@@ -28,4 +28,8 @@
     <string name="title_dashboard">Dashboard</string>
     <string name="title_Profile">Profile</string>
     <string name="title_activity_bottom_bar_navigation">BottomBarNavigation</string>
+    <string name="nasgor">Nasi goreng timun</string>
+    <string name="sayur">sayur bayam\n</string>
+    <string name="decnasi">nasi goreng asli indonesia</string>
+    <string name="decsayur">"sayur bayam sangat mudah untuk dibuat "</string>
 </resources>
