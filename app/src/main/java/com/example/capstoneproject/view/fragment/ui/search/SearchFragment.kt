@@ -73,8 +73,8 @@ class SearchFragment : Fragment() {
         recipeArrayList = arrayListOf<Recipe>()
 
         image = arrayOf(
-            R.id.logo_app,
-            R.id.logo
+            R.drawable.logo,
+            R.drawable.logo
         )
         title = arrayOf(
             getString(R.string.nasgor),
