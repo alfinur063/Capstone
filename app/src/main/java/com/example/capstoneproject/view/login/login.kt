@@ -15,6 +15,7 @@ import com.example.capstoneproject.ViewModelFactory
 import com.example.capstoneproject.database.preference.UserModel
 import com.example.capstoneproject.database.repository.ResultState
 import com.example.capstoneproject.databinding.ActivityLoginBinding
+import com.example.capstoneproject.view.fragment.ui.home.HomeFragment
 import com.example.capstoneproject.view.register.register
 
 class login : AppCompatActivity(), OnClickListener {
@@ -57,7 +58,7 @@ class login : AppCompatActivity(), OnClickListener {
                             )
                         )
 
-                        val intent = Intent(this@login, MainActivity::class.java)
+                        val intent = Intent(this@login, HomeFragment::class.java)
                         intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
                         startActivity(intent)
                         finish()

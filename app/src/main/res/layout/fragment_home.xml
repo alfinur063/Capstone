@@ -44,16 +44,17 @@
         app:layout_constraintBottom_toBottomOf="@id/welcome_text"/>
 
 
-    <ImageButton
+    <Button
         android:id="@+id/main_feature"
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:layout_marginStart="30dp"
         android:layout_marginEnd="30dp"
+        android:text="Main Features"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="86dp">
-    </ImageButton>
+        tools:layout_editor_absoluteY="86dp"/>
+
 
     <TextView
         android:id="@+id/title_recommendation"

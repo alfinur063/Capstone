@@ -32,4 +32,78 @@
     <string name="sayur">sayur bayam\n</string>
     <string name="decnasi">nasi goreng asli indonesia</string>
     <string name="decsayur">"sayur bayam sangat mudah untuk dibuat "</string>
+
+
+    <string name="contoh_textPanjang">
+        1. Definisi
+Aplikasi HealthEats  adalah aplikasi kesehatan yang dikembangkan oleh [nama perusahaan pengembang] yang dapat mendeteksi penyakit tidak menular dengan tingkat akurasi hingga 93% dan juga dapat menyimpan data pribadi pengguna.\n\n
+Pengguna adalah orang yang menggunakan Aplikasi HealthEats.\n
+Data Pribadi adalah data yang dapat diidentifikasikan sebagai milik pengguna, termasuk namun tidak terbatas pada nama, alamat, nomor telepon, email, dan informasi kesehatan.\n
+
+2. Ketentuan Penggunaan\n\n
+
+Dengan menggunakan Aplikasi HealthEats, pengguna setuju untuk terikat dengan Term and Condition ini.\n\n
+Pengguna bertanggung jawab untuk menjaga kerahasiaan akun dan kata sandinya.\n\n
+Pengguna bertanggung jawab untuk memberikan informasi yang benar dan akurat kepada Aplikasi HealthEats.\n\n
+Pengguna dilarang menggunakan Aplikasi HealthEats untuk tujuan yang melanggar hukum atau merugikan pihak lain.\n\n
+\n
+        3. Ketentuan Penyimpanan Data Pribadi
+\n\n
+Aplikasi HealthEats akan menyimpan Data Pribadi pengguna untuk tujuan meningkatkan pengalaman pengguna dan untuk memberikan layanan yang lebih baik.
+\n\n
+Aplikasi HealthEats akan mengambil langkah-langkah keamanan yang wajar untuk melindungi Data Pribadi pengguna.
+\n\n
+Pengguna dapat mengakses dan memperbarui Data Pribadinya melalui Aplikasi HealthEats.
+\n\n
+Pengguna dapat meminta untuk menghapus Data Pribadinya dari Aplikasi HealthEats dengan menghubungi [alamat email pengembang].
+\n\n
+4. Ketentuan Layanan Deteksi Penyakit
+\n\n
+Layanan deteksi penyakit di Aplikasi HealthEats menggunakan algoritma yang telah teruji dengan tingkat akurasi hingga 93%.
+\n\n
+Layanan deteksi penyakit di Aplikasi HealthEats tidak dimaksudkan untuk menggantikan diagnosis atau pengobatan oleh tenaga medis profesional.
+\n\n
+Jika pengguna mendapatkan hasil deteksi penyakit yang menunjukkan kemungkinan adanya penyakit tertentu, pengguna disarankan untuk berkonsultasi dengan tenaga medis profesional.
+\n\n
+5. Ketentuan Rekomendasi Makanan
+\n\n
+Aplikasi HealthEats juga akan memberikan beberapa rekomendasi makanan terhadap pengguna sesuai penyakit yang ia derita.
+\n\n
+Rekomendasi makanan tersebut dibuat berdasarkan algoritma yang telah teruji dan didukung oleh penelitian ilmiah.
+\n\n
+Namun, pengguna tetap disarankan untuk berkonsultasi dengan dokter dalam mengonsumsi makanan tersebut.
+\n\n
+6. Tindakan yang Dilarang
+\n\n
+Pengguna dilarang melakukan tindakan-tindakan berikut:
+\n\n
+Menggunakan Aplikasi HealthEats untuk tujuan yang melanggar hukum atau merugikan pihak lain.
+\n\n
+Melakukan aktivitas yang dapat mengganggu atau merusak Aplikasi HealthEats.
+\n\n
+Mengakses atau menggunakan Aplikasi HealthEats secara tidak sah.
+\n\n
+Meretas atau mencoba meretas Aplikasi HealthEats.
+\n\n
+Membagikan atau menyebarkan informasi yang tidak benar atau menyesatkan tentang Aplikasi HealthEats.
+\n\n
+7. Penyangkalan dan Batasan Tanggung Jawab
+\n\n
+Aplikasi HealthEats tidak bertanggung jawab atas segala kerugian atau kerusakan yang timbul dari penggunaan Aplikasi HealthEats, baik secara langsung maupun tidak langsung, termasuk namun tidak terbatas pada kerugian atau kerusakan yang disebabkan oleh kesalahan, kelalaian, atau kegagalan Aplikasi HealthEats.
+\n\n
+Aplikasi HealthEats tidak menjamin bahwa Aplikasi HealthEats akan selalu tersedia dan berfungsi tanpa gangguan.
+\n\n
+Aplikasi HealthEats berhak untuk mengubah atau memperbaharui Aplikasi HealthEats dari waktu ke waktu.
+\n\n
+8. Pemberitahuan
+\n\n
+Aplikasi HealthEats dapat mengirimkan pemberitahuan kepada pengguna melalui email, SMS, atau cara lain yang tersedia.
+\n\n
+Pengguna bertanggung jawab untuk membaca dan memahami pemberitahuan yang dikirimkan oleh Aplikasi HealthEats.
+\n\n
+Penutup
+\n\n
+Kami harap Term and Condition ini dapat memberikan informasi yang jelas dan lengkap kepada pengguna mengenai penggunaan Aplikasi HealthEats.
+
+    </string>
 </resources>
