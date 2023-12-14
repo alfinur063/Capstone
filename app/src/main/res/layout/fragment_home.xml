@@ -27,11 +27,12 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginBottom="24dp"
+        android:layout_marginTop="48dp"
         android:text="Hallo, selamat datanag $user"
         android:textSize="14sp"
         android:textStyle="italic"
-        app:layout_constraintBottom_toTopOf="@id/main_feature"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/user_profile"
@@ -50,10 +51,11 @@
         android:layout_height="100dp"
         android:layout_marginStart="30dp"
         android:layout_marginEnd="30dp"
+        android:layout_marginTop="30dp"
         android:text="Main Features"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="86dp"/>
+        app:layout_constraintTop_toBottomOf="@+id/welcome_text" />
 
 
     <TextView
