@@ -2,6 +2,7 @@ plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
     id("kotlin-parcelize")
+    id("com.google.devtools.ksp")
 }
 
 android {
@@ -41,6 +42,9 @@ android {
 
 dependencies {
 
+    //glide
+    implementation("com.github.bumptech.glide:glide:4.16.0")
+
     //retrofit
     implementation("com.squareup.retrofit2:retrofit:2.9.0")
     implementation("com.squareup.retrofit2:converter-gson:2.9.0")
@@ -53,6 +57,10 @@ dependencies {
 
     //datastore
     implementation("androidx.datastore:datastore-preferences:1.0.0")
+
+    //room
+    implementation("androidx.room:room-ktx:2.5.2")
+    ksp("androidx.room:room-compiler:2.5.2")
 
     //corountines
     implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.6.1")

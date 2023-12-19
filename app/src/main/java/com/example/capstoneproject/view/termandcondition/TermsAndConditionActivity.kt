@@ -19,6 +19,7 @@ class TermsAndConditionActivity : AppCompatActivity() {
         binding.goToQuestion.setOnClickListener {
             startActivity(Intent(this@TermsAndConditionActivity, QuestionActivity::class.java))
         }
+        supportActionBar?.hide()
 
 
 
