@@ -1,37 +1,37 @@
 package com.example.capstoneproject.database.api
 
+import com.google.gson.GsonBuilder
 import de.hdodenhof.circleimageview.BuildConfig
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import java.util.concurrent.TimeUnit
 
-class ApiConfig {
-    companion object {
-        fun getApiService(token: String): ApiService {
-            val loggingInterceptor = if (BuildConfig.DEBUG) {
-                HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY)
-            }else{
-                HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.NONE)
-            }
-            val authInterceptor = Interceptor { chain ->
-                val req = chain.request()
-                val requestAddress = req.newBuilder()
-                    .addHeader("Authorization", "Bearer $token")
-                    .build()
-                chain.proceed(requestAddress)
-            }
-            val client = OkHttpClient.Builder()
-                .addInterceptor(loggingInterceptor)
-                .addInterceptor(authInterceptor)
+object ApiConfig {
+    private const val BASE_URL = "https://healtheats-backend-2-vcbwn2seaq-et.a.run.app/users/"
+    private val client: Retrofit
+        get() {
+            val gson = GsonBuilder()
+                .setLenient()
+                .create()
+            val interceptor = HttpLoggingInterceptor()
+            interceptor.level = HttpLoggingInterceptor.Level.BODY
+            val client: OkHttpClient = OkHttpClient.Builder()
+                .addInterceptor(interceptor)
+                .connectTimeout(40, TimeUnit.SECONDS)
+                .readTimeout(40, TimeUnit.SECONDS)
+                .writeTimeout(40, TimeUnit.SECONDS)
                 .build()
-            val retrofit = Retrofit.Builder()
-                .baseUrl("https://healtheats-backend-vcbwn2seaq-et.a.run.app/users/")
-                .addConverterFactory(GsonConverterFactory.create())
+
+            return Retrofit.Builder()
+                .baseUrl(BASE_URL)
+                .addConverterFactory(GsonConverterFactory.create(gson))
                 .client(client)
                 .build()
-            return retrofit.create(ApiService::class.java)
         }
-    }
+
+    val instanceRetrofit: ApiService
+        get() = client.create(ApiService::class.java)
 }
