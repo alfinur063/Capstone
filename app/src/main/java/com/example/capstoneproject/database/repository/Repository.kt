@@ -1,7 +1,10 @@
 package com.example.capstoneproject.database.repository
 
 import android.app.Service
+import android.util.Log
 import androidx.lifecycle.liveData
+import com.example.capstoneproject.database.LoginRequest
+import com.example.capstoneproject.database.User
 import com.example.capstoneproject.database.api.ApiService
 import com.example.capstoneproject.database.preference.UserModel
 import com.example.capstoneproject.database.preference.UserPreference
@@ -20,23 +23,27 @@ class Repository private constructor(
     fun login(email: String, password: String) = liveData<ResultState<LoginResponse>> {
         emit(ResultState.Loading)
         try {
-            val successResponse = apiService.login(email, password)
-            val userModel = UserModel(successResponse.loginResult.name, successResponse.loginResult.token, true)
+            val successResponse = apiService.login(LoginRequest(email, password))
+            val userModel = UserModel(successResponse.accessToken,successResponse.accessToken,true)
             saveSession(userModel)
             emit(ResultState.Success(successResponse))
         } catch (e: HttpException) {
             val errorBody = e.response()?.errorBody()?.string()
             val errorResponse = Gson().fromJson(errorBody, LoginResponse::class.java)
-            emit(ResultState.Error(errorResponse.message))
+            emit(ResultState.Error(errorResponse.toString()))
         }
     }
 
     fun register(name: String, email: String, password: String) = liveData{
         emit(ResultState.Loading)
+        Log.d("register mantap", name)
+        Log.d("register mantap", email)
+        Log.d("register mantap", password)
         try {
-            val successResponse = apiService.register(name, email, password)
+            val successResponse = apiService.register(User(name, email, password))
             emit(ResultState.Success(successResponse))
         } catch (e: HttpException) {
+            Log.d("register", e.toString())
             val errorBody = e.response()?.errorBody()?.string()
             val errorResponse = Gson().fromJson(errorBody, RegisterResponse::class.java)
             emit(ResultState.Error(errorResponse.message))
