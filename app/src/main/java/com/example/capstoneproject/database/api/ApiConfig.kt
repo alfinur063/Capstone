@@ -9,30 +9,35 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 
-object ApiConfig {
-    private const val BASE_URL = "https://healtheats-backend-2-vcbwn2seaq-et.a.run.app/users/"
-    private val client: Retrofit
-        get() {
-            val gson = GsonBuilder()
-                .setLenient()
-                .create()
-            val interceptor = HttpLoggingInterceptor()
-            interceptor.level = HttpLoggingInterceptor.Level.BODY
-            val client: OkHttpClient = OkHttpClient.Builder()
-                .addInterceptor(interceptor)
-                .connectTimeout(40, TimeUnit.SECONDS)
-                .readTimeout(40, TimeUnit.SECONDS)
-                .writeTimeout(40, TimeUnit.SECONDS)
+class ApiConfig {
+    companion object {
+        fun getApiService(token: String): ApiService {
+            val loggingInterceptor = if (BuildConfig.DEBUG) {
+                HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY)
+            }else{
+                HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.NONE)
+            }
+            val authInterceptor = Interceptor { chain ->
+                val req = chain.request()
+                val requestAddress = req.newBuilder()
+                    .addHeader("Authorization", "Bearer $token")
+                    .build()
+                chain.proceed(requestAddress)
+            }
+            val client = OkHttpClient.Builder()
+                .addInterceptor(loggingInterceptor)
+                .addInterceptor(authInterceptor)
                 .build()
-
-            return Retrofit.Builder()
-                .baseUrl(BASE_URL)
-                .addConverterFactory(GsonConverterFactory.create(gson))
+            val retrofit = Retrofit.Builder()
+                .baseUrl("https://story-api.dicoding.dev/v1/")
+                .addConverterFactory(GsonConverterFactory.create())
                 .client(client)
                 .build()
+            return retrofit.create(ApiService::class.java)
         }
-    //ubahh
-
-    val instanceRetrofit: ApiService
-        get() = client.create(ApiService::class.java)
+    }
 }
+
+// https://story-api.dicoding.dev/v1/
+// https://backend-dot-healtheats-dev.et.r.appspot.com/users/
+

@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageView
 import android.widget.TextView
+import com.bumptech.glide.Glide
 import com.example.capstoneproject.R
 import com.example.capstoneproject.Recipe
 import com.example.capstoneproject.view.fragment.ui.search.SearchFragment
@@ -13,20 +14,14 @@ class DetailRecipeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail_recipe)
 
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        val Recipe = intent.getParcelableExtra<Recipe>(SearchFragment.INTENT_PARCELABLE)
-
-        val imageRecipe = findViewById<ImageView>(R.id.img_item_photo)
-        val titleRecipe = findViewById<TextView>(R.id.tv_item_name)
-        val descRecipe = findViewById<TextView>(R.id.tv_item_description)
-
-        imageRecipe.setImageResource(Recipe?.imageRecipe!!)
-        titleRecipe.text = Recipe.titleRecipe
-        descRecipe.text = Recipe.descRecipe
-
-    }
-    override fun onSupportNavigateUp(): Boolean {
-        onBackPressed()
-        return true
+        val intentTitle = intent.getStringExtra("intent_title")
+        val intentImage = intent.getStringExtra("intent_image")
+        supportActionBar!!.title = intentTitle
+        val imageView = findViewById<ImageView>(R.id.img_item_photo)
+        Glide.with(this)
+            .load(intentImage )
+            .placeholder(R.drawable.logo)
+            .error(R.drawable.logo)
+            .into(imageView)
     }
 }

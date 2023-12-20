@@ -3,6 +3,8 @@ package com.example.capstoneproject.adapter
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
+import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.capstoneproject.R
@@ -59,17 +61,20 @@ class RecipeAdapter (var results: ArrayList<SearchModel.Result>, val listener: O
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val result = results[position]
-   //     holder.view.findViewById(R.id.food_name) = result.food_name
+        holder.textView.text = result.food_name
         Glide.with(holder.view)
             .load(result.image)
             .placeholder(R.drawable.logo)
             .error(R.drawable.logo)
             .centerCrop()
-            .into(holder.view.findViewById(R.id.img_avatar))
+            .into(holder.imageView)
         holder.view.setOnClickListener { listener.onClick( result ) }
     }
 
-    class ViewHolder(val view: View ) : RecyclerView.ViewHolder(view)
+    class ViewHolder(val view: View ) : RecyclerView.ViewHolder(view){
+        val textView = view.findViewById<TextView>(R.id.foodname)
+        val imageView = view.findViewById<ImageView>(R.id.img_avatar)
+    }
 
     fun setData(recipe: List<SearchModel.Result>){
         this.results.clear()

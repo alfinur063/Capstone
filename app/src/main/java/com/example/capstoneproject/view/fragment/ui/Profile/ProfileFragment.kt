@@ -10,8 +10,8 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.example.capstoneproject.R
-import com.example.capstoneproject.database.preference.Constant
-import com.example.capstoneproject.database.preference.PrefHelper
+//import com.example.capstoneproject.database.preference.Constant
+//import com.example.capstoneproject.database.preference.PrefHelper
 import com.example.capstoneproject.databinding.FragmentProfileBinding
 import com.example.capstoneproject.view.login.LoginActivity
 
@@ -20,7 +20,7 @@ class ProfileFragment : Fragment() {
     private var _binding: FragmentProfileBinding? = null
  //   private lateinit var sPH: PrefHelper
     private lateinit var buttonKeluar: Button
-    lateinit var prefHelper: PrefHelper
+//    lateinit var prefHelper: PrefHelper
     private lateinit var username: TextView
 
 
@@ -37,14 +37,14 @@ class ProfileFragment : Fragment() {
 
         init(view)
         //   sPH = PrefHelper(requireActivity())
-        prefHelper = PrefHelper(requireActivity())
-
-        username.text = prefHelper.getString(Constant.PREF_USERNAME)
+//        prefHelper = PrefHelper(requireActivity())
+//
+//        username.text = prefHelper.getString(Constant.PREF_USERNAME)
 
 
 
         buttonKeluar.setOnClickListener {
-            prefHelper.clear()
+      //      prefHelper.clear()
             val i = Intent(activity, LoginActivity::class.java)
             startActivity(i)
             Toast.makeText(activity, "Anda Berhasil Logout !", Toast.LENGTH_SHORT).show()

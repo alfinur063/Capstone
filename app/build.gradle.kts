@@ -60,6 +60,7 @@ dependencies {
 
     //room
     implementation("androidx.room:room-ktx:2.5.2")
+    implementation("androidx.room:room-common:2.6.1")
     ksp("androidx.room:room-compiler:2.5.2")
 
     //corountines

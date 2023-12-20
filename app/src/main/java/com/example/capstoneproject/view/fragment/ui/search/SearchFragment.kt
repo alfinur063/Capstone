@@ -23,6 +23,7 @@ import com.example.capstoneproject.view.DetailRecipeActivity
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import java.util.Objects
 
 class SearchFragment : Fragment() {
 
@@ -35,6 +36,7 @@ class SearchFragment : Fragment() {
     private lateinit var recyclerView: RecyclerView
     private lateinit var searchView: SearchView
     private lateinit var recipeArrayList: ArrayList<Recipe>
+
 
 
     lateinit var image: Array<Int>
@@ -67,11 +69,11 @@ class SearchFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         dataInitialize()
-  //      getDataFromApi()
-//        val layoutManager = LinearLayoutManager(context)
-//        recyclerView = view.findViewById(R.id.rv_user)
-//        recyclerView.layoutManager = layoutManager
-//        recyclerView.setHasFixedSize(true)
+//        getDataFromApi()
+        val layoutManager = LinearLayoutManager(context)
+        recyclerView = view.findViewById(R.id.rv_user)
+        recyclerView.layoutManager = layoutManager
+        recyclerView.setHasFixedSize(true)
 //      recyclerView.adapter = recipeAdapter(recipeArrayList) {
 //            val intent = Intent(context, DetailRecipeActivity::class.java)
 //            intent.putExtra(INTENT_PARCELABLE, it)
@@ -80,24 +82,28 @@ class SearchFragment : Fragment() {
     }
 
 //    private fun getDataFromApi() {
-//       showLoading(true)
-//        ApiService.retrofit.recipe()
-//            .enqueue(object : Callback<SearchModel> {
-//                override fun onFailure(call: Call<SearchModel>, t: Throwable) {
-//                    printLog(t.toString())
-//                  showLoading(false)
+//     //  showLoading(true)
+//        ApiConfig.instanceRetrofit.recipe().enqueue(object : Callback<SearchModel> {
+//            override fun onResponse(call: Call<SearchModel>, response: Response<SearchModel>) {
+//      //          showLoading(false)
+//                if (response.isSuccessful) {
+//                    showResult(response.body()!!)
 //                }
+//            }
 //
-//                override fun onResponse(
-//                    call: Call<SearchModel>,
-//                    response: Response<SearchModel>
-//                ) {
-//                   showLoading(false)
-//                    if (response.isSuccessful) {
-//                        showResult(response.body()!!)
-//                    }
-//                }
-//            })
+//            override fun onFailure(call: Call<SearchModel>, t: Throwable) {
+//                printLog(t.toString())
+//        //        showLoading(false)
+//            }
+//
+//        })
+//    }
+
+//    private fun showLoading(loading: Boolean) {
+//        when (loading) {
+//            true -> progressBar.visibility = View.VISIBLE
+//            false -> progressBar.visibility = View.GONE
+//        }
 //    }
 
     private fun showResult(results: SearchModel) {

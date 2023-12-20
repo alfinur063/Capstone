@@ -10,7 +10,7 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
-import com.example.capstoneproject.database.preference.PrefHelper
+//import com.example.capstoneproject.database.preference.PrefHelper
 import com.example.capstoneproject.databinding.ActivityMainBinding
 import com.example.capstoneproject.view.fragment.ui.Profile.ProfileFragment
 import com.example.capstoneproject.view.fragment.ui.home.HomeFragment
@@ -29,7 +29,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var menu: Menu
     private lateinit var menuItem: MenuItem
     private lateinit var binding: ActivityMainBinding
-    private lateinit var sPH: PrefHelper
+//    private lateinit var sPH: PrefHelper
 
 //    private val viewModel by viewModels<MainViewModel> {
 //        ViewModelFactory.getInstance(this)
@@ -39,7 +39,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        sPH = PrefHelper(this)
+ //       sPH = PrefHelper(this)
       //  buttonNavigation()
 
 
