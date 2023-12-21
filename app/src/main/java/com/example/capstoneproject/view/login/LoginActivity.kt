@@ -69,21 +69,24 @@ class LoginActivity : AppCompatActivity(), OnClickListener {
                         binding.submitButtonLogin.isEnabled = true
                         showLoading(false)
 //                        viewModel.saveSession(
-//                            UserModel(
-//                                result.data.accessToken,
-//                            )
+//                            result.data.accessToken.
 //                        )
 
+
+
                         val intent = Intent(this@LoginActivity, MainActivity::class.java)
-                        intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
+                        intent.flags =
+                            Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
                         startActivity(intent)
                         finish()
                     }
+
                     is ResultState.Error -> {
                         showLoading(false)
                         binding.submitButtonLogin.isEnabled = true
                         Toast.makeText(this, "Login gagal", Toast.LENGTH_SHORT).show()
                     }
+
                     is ResultState.Loading -> {
                         binding.submitButtonLogin.isEnabled = false
                         showLoading(true)
@@ -92,6 +95,7 @@ class LoginActivity : AppCompatActivity(), OnClickListener {
             }
         }
     }
+
 
     private fun showLoading(state: Boolean) {
         if (state) {

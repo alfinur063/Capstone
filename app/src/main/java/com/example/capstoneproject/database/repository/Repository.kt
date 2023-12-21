@@ -29,7 +29,9 @@ class Repository private constructor(
             val userModel = UserModel(successResponse.accessToken,successResponse.accessToken,true)
             saveSession(userModel)
             emit(ResultState.Success(successResponse))
+            Log.d("tessss", successResponse.toString())
         } catch (e: HttpException) {
+            Log.d("testtt", e.toString())
             val errorBody = e.response()?.errorBody()?.string()
             val errorResponse = Gson().fromJson(errorBody, LoginResponse::class.java)
             emit(ResultState.Error(errorResponse.toString()))
