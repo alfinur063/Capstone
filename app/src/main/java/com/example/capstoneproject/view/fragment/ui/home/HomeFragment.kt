@@ -1,5 +1,6 @@
 package com.example.capstoneproject.view.fragment.ui.home
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
@@ -14,8 +15,13 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.capstoneproject.R
+import com.example.capstoneproject.Recipe
+import com.example.capstoneproject.Rekom
 import com.example.capstoneproject.ViewModelFactory
+import com.example.capstoneproject.adapter.ListRecipeAdapter
+import com.example.capstoneproject.adapter.ListRecomAdapter
 import com.example.capstoneproject.databinding.FragmentHomeBinding
 import com.example.capstoneproject.view.termandcondition.TermsAndConditionActivity
 
@@ -23,6 +29,8 @@ class HomeFragment : Fragment() {
 
     private var _binding: FragmentHomeBinding? = null
     private lateinit var btnMainFeature: CardView
+    private lateinit var rvRekom: RecyclerView
+    private val list = ArrayList<Rekom>()
 //    private val viewModel by viewModels<HomeViewModel> {
 //        ViewModelFactory.getInstance()
 //    }
@@ -31,28 +39,76 @@ class HomeFragment : Fragment() {
     private val binding get() = _binding!!
 
 
+    @SuppressLint("MissingInflatedId")
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val homeViewModel =
-            ViewModelProvider(this).get(HomeViewModel::class.java)
+        val view = inflater.inflate(R.layout.fragment_home, container, false)
+
 
         requireActivity().actionBar?.hide()
 
         _binding?.rekomenddasi1?.layoutManager = LinearLayoutManager(context)
         _binding?.rekomendasi2?.layoutManager = LinearLayoutManager(context)
 
-        _binding = FragmentHomeBinding.inflate(inflater, container, false)
-        val root: View = binding.root
+
 
 //        val textView: TextView = binding.textHome
 //        homeViewModel.text.observe(viewLifecycleOwner) {
 //            textView.text = it
 //        }
-        return root
+        rvRekom = view.findViewById(R.id.rekomenddasi_1)
+        rvRekom.setHasFixedSize(true)
+        list.addAll(getListRekom1())
+        showRecyclerList()
 
+        rvRekom = view.findViewById(R.id.rekomenddasi_1A)
+        rvRekom.setHasFixedSize(true)
+        list.addAll(getListRekom1())
+        showRecyclerList()
+
+        rvRekom = view.findViewById(R.id.rekomenddasi_1B)
+        rvRekom.setHasFixedSize(true)
+        list.addAll(getListRekom1())
+        showRecyclerList()
+
+        rvRekom = view.findViewById(R.id.rekomendasi_2)
+        rvRekom.setHasFixedSize(true)
+        list.addAll(getListRecom())
+        showRecyclerList()
+
+        return view
+
+    }
+
+    private fun getListRekom1(): ArrayList<Rekom> {
+        val dataName = resources.getStringArray(R.array.rekom1_name)
+        val dataPhoto = resources.obtainTypedArray(R.array.rekom_image)
+        val listRekom = ArrayList<Rekom>()
+        for (i in dataName.indices) {
+            val rekom = Rekom(dataName[i], dataPhoto.getResourceId(i, -1))
+            listRekom.add(rekom)
+        }
+        return listRekom
+    }
+
+    private fun getListRecom(): ArrayList<Rekom> {
+        val dataName = resources.getStringArray(R.array.rekom_name)
+        val dataPhoto = resources.obtainTypedArray(R.array.rekom_image)
+        val listRekom = ArrayList<Rekom>()
+        for (i in dataName.indices) {
+            val rekom = Rekom(dataName[i], dataPhoto.getResourceId(i, -1))
+            listRekom.add(rekom)
+        }
+        return listRekom
+    }
+
+    private fun showRecyclerList() {
+        rvRekom.layoutManager = LinearLayoutManager(requireContext())
+        val listRecomAdapter = ListRecomAdapter(list)
+        rvRekom.adapter = listRecomAdapter
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

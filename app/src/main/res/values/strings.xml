@@ -188,4 +188,23 @@ Kami harap Term and Condition ini dapat memberikan informasi yang jelas dan leng
         <item>Seperti yang dipaparkan dalam penelitian Jurnal Gizi Klinik Indonesia (2016), albumin yang terkandung dalam ikan gabus memiliki fungsi sebagai antioksidan , mempertahankan kondisi integritasmikrovaskular, memodulasi inflamasi, dan sebagai antikoagulan ternyata memiliki hubungan bermakna dengan peningkatan gizi pasien stroke.</item>D
     </string-array>
 
+
+    <string-array name="rekom_name">
+        <item>Salad Brokoli</item>D
+        <item>Salad bayam</item>D
+        <item>Plecing Kangkung Lombok</item>D
+    </string-array>
+
+    <string-array name="rekom1_name">
+        <item>Pakcoy Siram Kuah Jamur</item>D
+        <item>Tahu Tuna Kukus</item>D
+        <item>Pepes Ikan Gabus</item>D
+    </string-array>
+
+    <integer-array name="rekom_image">
+        <item>@drawable/logo</item>D
+        <item>@drawable/logo</item>D
+        <item>@drawable/logo</item>D
+    </integer-array>
+
 </resources>
