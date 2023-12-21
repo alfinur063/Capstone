@@ -3,6 +3,7 @@ package com.example.capstoneproject
 import android.content.Context
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import com.example.capstoneproject.SplashScreen.SplashScreenViewModel
 import com.example.capstoneproject.database.di.Injection
 //import com.example.capstoneproject.database.di.Injection
 import com.example.capstoneproject.database.repository.Repository
@@ -29,6 +30,9 @@ class ViewModelFactory(private val repository: Repository):
             }
             modelClass.isAssignableFrom(MainViewModel::class.java) -> {
                 MainViewModel(repository) as T
+            }
+            modelClass.isAssignableFrom(SplashScreenViewModel::class.java) ->{
+                SplashScreenViewModel(repository) as T
             }
             else -> throw IllegalAccessException("Unknown ViewModel Class: "+ modelClass.name)
         }

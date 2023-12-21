@@ -106,4 +106,7 @@ Penutup
 Kami harap Term and Condition ini dapat memberikan informasi yang jelas dan lengkap kepada pengguna mengenai penggunaan Aplikasi HealthEats.
 
     </string>
+    <string name="title_welcome_page">Welcome to Healtheast</string>
+    <string name="message_welcome_page">Come on, check your health and get healthy food recipes</string>
+    <string name="signup">Register</string>
 </resources>
