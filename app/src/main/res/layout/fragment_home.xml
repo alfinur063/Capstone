@@ -63,14 +63,16 @@
                 android:layout_height="70dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
-                tools:src="@tools:sample/avatars"/>
+                tools:src="@drawable/health"/>
 
             <TextView
                 android:id="@+id/title_of_main_feature"
                 android:layout_width="wrap_content"
                 android:layout_height="0dp"
-                android:text="title of main feature"
-                android:textSize="18sp"
+                android:layout_marginTop="12dp"
+                android:text="Cek Kesehatanmu Disini ya"
+                android:textSize="16sp"
+                app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintStart_toEndOf="@id/gambar_main_feature"
                 app:layout_constraintEnd_toEndOf="parent"/>
 
@@ -108,6 +110,7 @@
         android:layout_marginTop="16dp"
         android:orientation="horizontal"
         tools:listitem="@layout/rv_item"
+        tools:itemCount="3"
         app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
         app:layout_constraintTop_toBottomOf="@id/title_recommendation" />
 
@@ -126,6 +129,7 @@
         android:layout_height="150dp"
         android:layout_marginTop="24dp"
         android:orientation="horizontal"
+        tools:itemCount="3"
         app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
         app:layout_constraintTop_toBottomOf="@id/title_recom2"
         tools:listitem="@layout/rv_item" />

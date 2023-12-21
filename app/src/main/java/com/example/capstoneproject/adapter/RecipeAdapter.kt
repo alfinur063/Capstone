@@ -1,14 +1,13 @@
 package com.example.capstoneproject.adapter
 
+import android.content.Intent
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.example.capstoneproject.R
-import com.example.capstoneproject.view.fragment.ui.search.SearchModel
+import com.example.capstoneproject.database.response.ResultItem
+import com.example.capstoneproject.databinding.ItemsUserBinding
+import com.example.capstoneproject.view.fragment.detail.DetailRecipeActivity
 
 //class recipeAdapter(private val recipeList: ArrayList<Recipe>, val listener: (Recipe) -> Unit)
 //    : RecyclerView.Adapter<recipeAdapter.RecipeViewHolder>() {
@@ -50,41 +49,70 @@ import com.example.capstoneproject.view.fragment.ui.search.SearchModel
 //}
 
 
-class RecipeAdapter (var results: ArrayList<SearchModel.Result>, val listener: OnAdapterListener)
-    : RecyclerView.Adapter<RecipeAdapter.ViewHolder>() {
+class RecipeAdapter (private val results: List<ResultItem>)
+    : RecyclerView.Adapter<RecipeAdapter.ListFoodHolder>() {
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int)= ViewHolder (
-        LayoutInflater.from(parent.context).inflate(R.layout.items_user, parent, false)
-    )
-
-    override fun getItemCount() = results.size
-
-    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val result = results[position]
-        holder.textView.text = result.food_name
-        Glide.with(holder.view)
-            .load(result.image)
-            .placeholder(R.drawable.logo)
-            .error(R.drawable.logo)
-            .centerCrop()
-            .into(holder.imageView)
-        holder.view.setOnClickListener { listener.onClick( result ) }
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ListFoodHolder {
+        val binding = ItemsUserBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        return ListFoodHolder(binding)
     }
 
-    class ViewHolder(val view: View ) : RecyclerView.ViewHolder(view){
-        val textView = view.findViewById<TextView>(R.id.foodname)
-        val imageView = view.findViewById<ImageView>(R.id.img_avatar)
+    override fun onBindViewHolder(holder: ListFoodHolder, position: Int) {
+        val listFood = results[position]
+        holder.bind(listFood)
     }
 
-    fun setData(recipe: List<SearchModel.Result>){
-        this.results.clear()
-        this.results.addAll(recipe)
-        notifyDataSetChanged()
+
+    override fun getItemCount(): Int = results.size
+
+//    override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
+//        val result = results[position]
+//        holder
+//    }
+//        holder.textView.text = result.food_name
+//        Glide.with(holder.view)
+//            .load(result.image)
+//            .placeholder(R.drawable.logo)
+//            .error(R.drawable.logo)
+//            .centerCrop()
+//            .into(holder.imageView)
+//        holder.view.setOnClickListener { listener.onClick( result ) }
+//    }
+
+    class ListFoodHolder(private val binding: ItemsUserBinding):
+    RecyclerView.ViewHolder(binding.root){
+        fun bind(food: ResultItem){
+            Glide.with(binding.root.context)
+                .load(food.image)
+                .into(binding.imgAvatar)
+            binding.descripfood.text = food.deskripsi
+            binding.foodname.text = food.foodName
+
+            itemView.setOnClickListener{
+                val idFood = food.idFood
+                val goToDetail = Intent(binding.root.context, DetailRecipeActivity::class.java)
+                goToDetail.putExtra(DetailRecipeActivity.FOOD_ID, idFood)
+                binding.root.context.startActivity(goToDetail)
+            }
+        }
     }
 
-    interface OnAdapterListener {
-        fun onClick(result: SearchModel.Result)
-    }
+
+
+//    class ViewHolder(val view: View ) : RecyclerView.ViewHolder(view){
+//        val textView = view.findViewById<TextView>(R.id.foodname)
+//        val imageView = view.findViewById<ImageView>(R.id.img_avatar)
+//    }
+
+//    fun setData(recipe: List<SearchModel.Result>){
+//        this.results.clear()
+//        this.results.addAll(recipe)
+//        notifyDataSetChanged()
+//    }
+//
+//    interface OnAdapterListener {
+//        fun onClick(result: SearchModel.Result)
+//    }
     }
 
 

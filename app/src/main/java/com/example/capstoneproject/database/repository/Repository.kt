@@ -8,6 +8,8 @@ import com.example.capstoneproject.database.User
 import com.example.capstoneproject.database.api.ApiService
 import com.example.capstoneproject.database.preference.UserModel
 import com.example.capstoneproject.database.preference.UserPreference
+import com.example.capstoneproject.database.response.DetailFoodResponse
+import com.example.capstoneproject.database.response.FoodResponse
 import com.example.capstoneproject.database.response.LoginResponse
 import com.example.capstoneproject.database.response.RegisterResponse
 import com.google.gson.Gson
@@ -36,9 +38,9 @@ class Repository private constructor(
 
     fun register(name: String, email: String, password: String) = liveData{
         emit(ResultState.Loading)
-        Log.d("register mantap", name)
-        Log.d("register mantap", email)
-        Log.d("register mantap", password)
+//        Log.d("register mantap", name)
+//        Log.d("register mantap", email)
+//        Log.d("register mantap", password)
         try {
             val successResponse = apiService.register(User(name, email, password))
             emit(ResultState.Success(successResponse))
@@ -47,6 +49,30 @@ class Repository private constructor(
             val errorBody = e.response()?.errorBody()?.string()
             val errorResponse = Gson().fromJson(errorBody, RegisterResponse::class.java)
             emit(ResultState.Error(errorResponse.message))
+        }
+    }
+
+    fun foods() = liveData {
+        emit(ResultState.Loading)
+        try {
+            val successResponse = apiService.foods()
+            emit(ResultState.Success(successResponse))
+        }catch (e: HttpException){
+            val errorBody = e.response()?.errorBody()?.string()
+            val errorResponse = Gson().fromJson(errorBody, FoodResponse::class.java)
+            emit(ResultState.Error(errorResponse.toString()))
+        }
+    }
+
+    fun detailFoods(id: Int) = liveData {
+        emit(ResultState.Loading)
+        try {
+            val successResponse = apiService.detailFoods(id)
+            emit(ResultState.Success(successResponse))
+        }catch (e: HttpException){
+            val errorBody = e.response()?.errorBody()?.string()
+            val errorResponse = Gson().fromJson(errorBody, DetailFoodResponse::class.java)
+            emit(ResultState.Error(errorResponse.toString()))
         }
     }
 

@@ -4,26 +4,21 @@ import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
-import android.view.Menu
-import android.view.MenuInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ProgressBar
+import android.widget.Toast
 import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.capstoneproject.R
 import com.example.capstoneproject.Recipe
+import com.example.capstoneproject.ViewModelFactory
 import com.example.capstoneproject.adapter.RecipeAdapter
-import com.example.capstoneproject.database.api.ApiConfig
-import com.example.capstoneproject.database.api.ApiService
+import com.example.capstoneproject.database.repository.ResultState
 import com.example.capstoneproject.databinding.FragmentSearchBinding
-import com.example.capstoneproject.view.DetailRecipeActivity
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
-import java.util.Objects
+import com.example.capstoneproject.view.fragment.ui.home.HomeFragment
 
 class SearchFragment : Fragment() {
 
@@ -47,8 +42,9 @@ class SearchFragment : Fragment() {
 
     // This property is only valid between onCreateView and
     // onDestroyView.
-
-
+    private val viewModel by viewModels<SearchModel> {
+        ViewModelFactory.getInstance(requireContext())
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -67,8 +63,11 @@ class SearchFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        binding = FragmentSearchBinding.inflate(layoutInflater)
 
-        dataInitialize()
+        listFoods()
+
+        //dataInitialize()
 //        getDataFromApi()
         val layoutManager = LinearLayoutManager(context)
         recyclerView = view.findViewById(R.id.rv_user)
@@ -99,38 +98,71 @@ class SearchFragment : Fragment() {
 //        })
 //    }
 
-//    private fun showLoading(loading: Boolean) {
-//        when (loading) {
-//            true -> progressBar.visibility = View.VISIBLE
-//            false -> progressBar.visibility = View.GONE
-//        }
-//    }
-
-    private fun showResult(results: SearchModel) {
-        for (result in results.result) printLog("title: ${result.food_name}")
-        recipeAdapter.setData(results.result)
+    private fun showLoading(loading: Boolean) {
+       binding.progressBar.visibility = if (loading)
+        View.VISIBLE else View.GONE
     }
+
+//    private fun showResult(results: SearchModel) {
+//        for (result in results.result) printLog("title: ${result.food_name}")
+//        recipeAdapter.setData(results.result)
+//    }
 
     private fun printLog(message: String) {
         Log.d(TAG, message)
     }
 
+//    override fun onResume(){
+//        super.onResume()
+//        viewModel.listOfFood()
+//    }
+    private fun listFoods(){
 
-    private fun dataInitialize() {
-        recipeAdapter = RecipeAdapter(arrayListOf(), object : RecipeAdapter.OnAdapterListener {
-            override fun onClick(result: SearchModel.Result) {
-                startActivity(
-                    Intent(requireContext(), DetailRecipeActivity::class.java)
-                        .putExtra("intent_title", result.food_name)
-                        .putExtra("intent_image", result.image)
-                )
+//        viewModel.getSession().observe(requireActivity()){
+//            if (!it.isLogin ){
+//                val intent = Intent(requireActivity(), HomeFragment::class.java)
+//                startActivity(intent)
+//            }else{
+//        viewModel.listOfFood().observe(requireActivity()){ listfoods ->
+//        if (listfoods != null){
+//            when(listfoods){
+//                is ResultState.Success -> {
+//                    val list = RecipeAdapter(listfoods.data?.result!!)
+//                    binding.rvUser.adapter = list
+//                }
+//                is ResultState.Error -> {
+//                    Toast.makeText(requireContext(), "gagal menampilkan list maknan", Toast.LENGTH_SHORT).show()
+//                }
+//                is ResultState.Loading -> {
+//                    showLoading(true)
+//                }
+//            }
+//        }
+//        }
             }
-        })
-        recyclerView.apply {
-            layoutManager = LinearLayoutManager(requireContext())
-            adapter = recipeAdapter
-        }
+
+
     }
+
+
+
+
+
+//    private fun dataInitialize() {
+//        recipeAdapter = RecipeAdapter(arrayListOf(), object : RecipeAdapter.OnAdapterListener {
+//            override fun onClick(result: SearchModel.Result) {
+//                startActivity(
+//                    Intent(requireContext(), DetailRecipeActivity::class.java)
+//                        .putExtra("intent_title", result.food_name)
+//                        .putExtra("intent_image", result.image)
+//                )
+//            }
+//        })
+//        recyclerView.apply {
+//            layoutManager = LinearLayoutManager(requireContext())
+//            adapter = recipeAdapter
+//        }
+//    }
 //        recipeArrayList = arrayListOf<Recipe>()
 //
 //        image = arrayOf(
@@ -150,7 +182,7 @@ class SearchFragment : Fragment() {
 //            val recipe = Recipe(image[i], title[i], descriptions[i])
 //            recipeArrayList.add(recipe)
 //        }
-    }
+
 
 
 

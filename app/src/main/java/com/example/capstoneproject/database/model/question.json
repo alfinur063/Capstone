@@ -1,28 +1,34 @@
 [
-{
-"soal": "jenis kelamin ?",
-"options": ["laki-laki", "Perempuan"],
-"answer": 0
-},
-{
-"soal": "Berapakah Umur anda",
-"opstions": 0,
-"answer": 0
-},
-{
-"soal": "smoking status ?",
-"options": ["Ya", "Sering", "Jarang", "Tidak Pernah"],
-"answer": 0
-},
-{
-"soal": "Married Status ?",
-"options": ["Sudah Menikah", "Belum Menikah"],
-"answer": 0
-},
-{
-"soal": "Tempat Tinggal ?",
-"options": ["Kota", "Desa"],
-"answer": 0
-}
-
+  {
+    "question": "Apa jenis kelamin Anda?",
+    "options": ["Laki - laki", "Perempuan"]
+  },
+  {
+    "question": "Berapa usia Anda?",
+    "options": ["Umur Anda"]
+  },
+  {
+    "question": "Apakah Anda pernah menikah?",
+    "options": ["Pernah", "Tidak", "tidak ingin memberitahu"]
+  },
+  {
+    "question": "Jenis pekerjaan Anda?",
+    "options": ["Tidak ingin memberitahu", "Wiraswasta", "Asisten Rumah Tangga", "Pegawai Pemerintah", "Tidak Bekerja"]
+  },
+  {
+    "question": "Tipe tempat tinggal Anda?",
+    "options": ["Kota", "Desa", "lain"]
+  },
+  {
+    "question": "Bagaimana indeks massa tubuh (BMI) Anda?",
+    "options": ["Normal", "Underweight", "Obese"]
+  },
+  {
+    "question": "Apakah Anda pernah merokok?",
+    "options": ["Tidak pernah merokok", "Tidak ingin memberitahu", "Pernah Merokok", "Perokok", "lain"]
+  },
+  {
+    "question": "Apakah anda pernah melakukan aktifitas fisik seperti olahraga ringan?",
+    "options": ["Tidak", "Iya", "lain"]
+  }
 ]

@@ -1,6 +1,6 @@
 package com.example.capstoneproject.view.question
 
-import android.content.Context
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -11,16 +11,25 @@ import android.widget.RadioGroup
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
-import com.example.capstoneproject.R
-import com.example.capstoneproject.database.model.getAnswerIndex
+import androidx.lifecycle.ViewModelProvider
+import com.example.capstoneproject.ViewModelFactory
+import com.example.capstoneproject.database.api.ApiService
 import com.example.capstoneproject.database.model.questionsWithOptions
+import com.example.capstoneproject.database.repository.Repository
 import com.example.capstoneproject.database.repository.ResultState
+import com.example.capstoneproject.database.response.UserAnswerResponse
 import com.example.capstoneproject.database.room.Answer
 import com.example.capstoneproject.database.room.AnswerDatabase
 import com.example.capstoneproject.databinding.ActivityQuestionBinding
+import com.example.capstoneproject.view.recomendation.RecommendationActivity
+import com.google.gson.JsonArray
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
+import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
+import java.lang.Exception
 
 class QuestionActivity : AppCompatActivity() {
 
@@ -30,7 +39,9 @@ class QuestionActivity : AppCompatActivity() {
     private lateinit var ageEditText: EditText
     private var currentQuestionIndex = 0
     private var isRadioButtonChecked = false
-    private val userAnswers = mutableListOf<String>()
+    private val userAnswers = mutableListOf<Int>()
+  //  private lateinit var userAnswerRepository : Repository
+    private lateinit var questionViewModel: QuestionViewModel
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityQuestionBinding.inflate(layoutInflater)
@@ -42,14 +53,36 @@ class QuestionActivity : AppCompatActivity() {
 
         supportActionBar?.hide()
 
+        //userAnswerViewModel = ViewModelProvider(this).get(QuestionViewModel::class.java)
+
+       // questionViewModel = ViewModelProvider(this).get(QuestionViewModel::class.java)
+
 
         binding.nextButton.setOnClickListener {
             handleNextButon()
         }
+        binding.previous.setOnClickListener{
+            previousButton()
+        }
+        binding.resultUser.setOnClickListener {
+//            val jsonArrayToSend: JsonArray = questionViewModel.getUserAnswersAsJsonArray()
+//            sendDataToAPI(jsonArrayToSend)
+            showAnswer()
+            val intent = Intent(this, RecommendationActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
+
         optionsRadioGroup.setOnCheckedChangeListener { _,_->
             isRadioButtonChecked = true
         }
+
         showQuestion()
+
+//        val usersAnswer = 5
+//        questionViewModel.addUsersAnswer(usersAnswer)
+//        val jsonArrayToSend: JsonArray = questionViewModel.getUserAnswersAsJsonArray()
+
     }
 
     private fun showQuestion(){
@@ -57,6 +90,12 @@ class QuestionActivity : AppCompatActivity() {
            val currentQuestion = questionsWithOptions[currentQuestionIndex]
            questionText.text = currentQuestion.question
 
+           val previousButton: Button = binding.previous
+           val nextButon: Button = binding.nextButton
+           val resultButton: Button = binding.resultUser
+          // nextButon.visibility = if (currentQuestionIndex == questionsWithOptions.size - 1) View.GONE else View.VISIBLE
+           previousButton.visibility = if (currentQuestionIndex == 0) View.GONE else View.VISIBLE
+           resultButton.visibility = if (currentQuestionIndex == questionsWithOptions.size -1)View.VISIBLE else View.GONE
            optionsRadioGroup.removeAllViews()
 
            if (currentQuestionIndex == 1){
@@ -75,7 +114,6 @@ class QuestionActivity : AppCompatActivity() {
            }
        }else{
            Toast.makeText(this, "Quiz is done", Toast.LENGTH_SHORT).show()
-           showAnswer()
        }
     }
 
@@ -85,7 +123,9 @@ class QuestionActivity : AppCompatActivity() {
             if (currentQuestionIndex == 1){
                 val age = ageEditText.text.toString()
                 if (age.isNotBlank()){
-                    userAnswers.add(age)
+                    val ageInt = age.toInt()
+                    userAnswers.add(ageInt)
+                    //saveUserAnswer(currentQuestionIndex, ageInt)
                     currentQuestionIndex++
                     showQuestion()
                 }else{
@@ -95,13 +135,23 @@ class QuestionActivity : AppCompatActivity() {
                 val selectOption = optionsRadioGroup.checkedRadioButtonId
                 if (selectOption != -1){
                     val selectAnswer = findViewById<RadioButton>(selectOption)?.text.toString()
-                    userAnswers.add(selectAnswer)
+                    val answerIndex = currentQuestion.listOpstions.indexOf(selectAnswer)
+                    userAnswers.add(answerIndex)
+                    //saveUserAnswer(currentQuestionIndex, answerIndex)
                     currentQuestionIndex++
                     showQuestion()
                 }else{
                     Toast.makeText(this, "Pilih jawaban anda", Toast.LENGTH_SHORT).show()
                 }
             }
+        }
+    }
+
+
+    private fun previousButton(){
+        if (currentQuestionIndex > 0){
+            currentQuestionIndex--
+            showQuestion()
         }
     }
 
@@ -116,19 +166,80 @@ class QuestionActivity : AppCompatActivity() {
             .show()
     }
 
-    private fun saveUserAnswer(questionIndex: Int, userAnswer: String){
-        val answerIndex = getAnswerIndex(questionIndex, userAnswer)
-        if (answerIndex != null){
-            val userAnswerDao = AnswerDatabase.getDatabase(this).userAnswerDao()
-            val userAnswerEntity = Answer(questionIndex = questionIndex, answerIndex = answerIndex)
+//    private fun saveUserAnswer(questionIndex: Int, userAnswer: Int){
+//            val userAnswerDao = AnswerDatabase.getDatabase(this).userAnswerDao()
+//            val userAnswerEntity = Answer(questionIndex = questionIndex, answerIndex = userAnswer)
+//
+//            CoroutineScope(Dispatchers.IO).launch {
+//                userAnswerRepository.addUserAnswer(questionIndex, userAnswer)
+//            }
+//    }
 
-            CoroutineScope(Dispatchers.IO).launch {
-                userAnswerDao.insertAnswer(userAnswerEntity)
-            }
-        }else{
-            Toast.makeText(this, "Penyimpanan data ke database gagal", Toast.LENGTH_SHORT).show()
-        }
+
+//    private fun displayAnswer(){
+//        val userAnswerDao = AnswerDatabase.getDatabase(this).userAnswerDao()
+//
+//        CoroutineScope(Dispatchers.IO).launch {
+//            val usersAnswer = userAnswerDao.getAllAnswerUser()
+//
+//        for (answer in usersAnswer){
+//            Log.d("User Answer", "Question ${answer.questionIndex}: ${answer.answerIndex}")
+//        }
+//        }
+//    }
+
+    private fun addAnswer(answerIndex: Int){
+        userAnswers.add(answerIndex)
     }
+
+//    private fun sendUserAnswerToAPI(){
+//        val userAnswerRespone = UserAnswerResponse(userAnswers)
+//        sendDataToAPI(userAnswerRespone)
+//    }
+
+//    private fun sendDataToAPI(jsonArrayToSend: JsonArray){
+//        val retrofit = Retrofit.Builder()
+//            val alluserAnswer = userAnswerRepository.getAllUserAnswer()
+//                val userAnswerToSend =List<Int> = listOf(1,2,3,4,5)
+//                    val userAnswerArray: Array<Int> = userAnswers.toTypedArray()
+//            .baseUrl("https://backend-dot-healtheats-dev.et.r.appspot.com/")
+//            .addConverterFactory(GsonConverterFactory.create())
+//            .build()
+//
+//        val apiService = retrofit.create(ApiService::class.java)
+//
+//       CoroutineScope(Dispatchers.IO).launch {
+//           try {
+//               val response = apiService.SendUserAnswer(jsonArrayToSend)
+//               withContext(Dispatchers.Main) {
+//                   if (response != null) {
+//                       runOnUiThread {
+//                           Toast.makeText(
+//                               this@QuestionActivity,
+//                               "Data telah terkirim ke API",
+//                               Toast.LENGTH_SHORT
+//                           ).show()
+//                       }
+//                   } else {
+//                       runOnUiThread {
+//                           Toast.makeText(
+//                               this@QuestionActivity,
+//                               "Gagal mengirim data ke API",
+//                               Toast.LENGTH_SHORT
+//                           ).show()
+//                       }
+//                   }
+//               }
+//           }catch (e: Exception){
+//               withContext(Dispatchers.Main){
+//                   Toast.makeText(this@QuestionActivity,
+//                       "Terjadi Kesalahan: ${e.message}",
+//                       Toast.LENGTH_SHORT
+//                   ).show()
+//               }
+//           }
+//       }
+//    }
 
 }
 

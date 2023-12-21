@@ -33,9 +33,10 @@ class RegisterActivity : AppCompatActivity() {
         binding.goToLogin.setOnClickListener{
             startActivity(Intent(this@RegisterActivity, LoginActivity::class.java))
         }
-        binding.btnSign.setOnClickListener() {
+        binding.btnSign.setOnClickListener {
             setUpAction()
         }
+        supportActionBar?.hide()
 
 
     }

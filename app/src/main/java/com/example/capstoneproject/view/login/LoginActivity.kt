@@ -46,6 +46,7 @@ class LoginActivity : AppCompatActivity(), OnClickListener {
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        supportActionBar?.hide()
 
         binding.goToRegis.setOnClickListener {
             startActivity(Intent(this@LoginActivity, RegisterActivity::class.java))
