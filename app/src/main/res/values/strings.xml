@@ -109,4 +109,83 @@ Kami harap Term and Condition ini dapat memberikan informasi yang jelas dan leng
     <string name="title_welcome_page">Welcome to Healtheast</string>
     <string name="message_welcome_page">Come on, check your health and get healthy food recipes</string>
     <string name="signup">Register</string>
+
+    <string-array name="data_name">
+        <item>Plecing Kangkung Lombok</item>D
+        <item>Salad bayam</item>D
+        <item>Salad Brokoli</item>D
+        <item>Sayur bening Bayam Wortel</item>D
+        <item>Sup Ikan Bandeng</item>D
+        <item>Pindang Patin Nanas</item>D
+        <item>Sop Wortel dan Kentang</item>D
+        <item>Pakcoy Siram Kuah Jamur</item>D
+        <item>Tahu Tuna Kukus</item>D
+        <item>Pepes Ikan Gabus</item>D
+    </string-array>
+
+    <string-array name="data_description">
+        <item>Pelecing kangkung merupakan kuliner khas masyarakat Lombok Nusa Tenggara Barat yang sejak zaman nenek moyang sampai sekarang masih merupakan makanan primadona Suku Sasak di Lombok Nusa Tenggara Barat.</item>D
+        <item>Salad bayam adalah hidangan segar dan lezat yang menggabungkan bayam hijau yang bergizi dengan berbagai bahan lainnya untuk menciptakan paduan rasa dan tekstur yang menarik.</item>D
+        <item>Salad yg praktis, cepat dan mengenyangkan juga sehat</item>D
+        <item>Secara kasar, satu porsi sayur bening bayam (sekitar 1 cangkir atau 240 ml) mengandung sekitar 25-30 kalori, 2-3 gram protein, 4-5 gram karbohidrat, dan kurang dari 1 gram lemak. Selain itu, sayur bening bayam ini juga rendah sodium, sehingga cocok untuk orang yang mengontrol asupan garam dalam makanannya. Sementara dalam 100 gram sayur bayam mentah, terkandung sekitar 23 kalori. Ini berarti bahwa dalam 1 cangkir sayur bayam mentah (sekitar 28 gram), hanya terkandung sekitar 7 kalori.</item>D
+        <item>Bandeng sangat mudah Anda dapatkan Di samping itu, harga ikan ini juga lebih terjangkau. Selain mineral, ikan ini juga dilengkapi dengan berbagai macam vitamin, seperti vitamin D, vitamin A, vitamin C, dan vitamin E.</item>D
+        <item>Pindang patin nanas adalah hidangan yang lezat dan sehat, dirancang khusus untuk memenuhi kebutuhan penderita hipertensi. Dengan memadukan rasa asam segar nanas dan kesehatan ikan patin, hidangan ini menjadi pilihan yang baik untuk menjaga tekanan darah tetap terkendali</item>D
+        <item>Kandungan betakaroten pada wortel sangat bagus untuk kesehatan penderita stroke. Karena mampu menurunkan kadar kolesterol jahat dan mencegah kerusakan sel-sel tubuh lebih lama lagi.</item>D
+        <item>Jamur shimeji yang biasanya kita temui di supermarket dapat diolah menjadi makanan yang sangat bermanfaat bagi kesehatan, sifat antiateroskleoritk yang dimiliki dapat mengurangi pembetukan plak pada pembuluh arteri sehingga dapat mengurangi resiko stoke. selain itu jamur shimeji mudah untuk diolah dan dikreasikan keberbagai menu masakan.</item>D
+        <item>Tuna adalah salah satu jenis ikan berlemak yang memiliki kandungan omega-3 yang tinggi, selain itu Tuna Tahu Kukus ini sangat mudah untuk dibuat.</item>D
+        <item>Pepes ikan gabus tidak hanya lezat tetapi juga bergizi karena ikan gabus kaya akan protein dan omega-3. Selain itu, cara pengolahannya yang dikukus membuat pepes ikan gabus menjadi pilihan makanan yang lebih sehat karena tidak menggunakan minyak untuk memasaknya.</item>D
+    </string-array>
+
+    <integer-array name="data_image">
+        <item>@drawable/logo</item>D
+        <item>@drawable/logo</item>D
+        <item>@drawable/logo</item>D
+        <item>@drawable/logo</item>D
+        <item>@drawable/logo</item>D
+        <item>@drawable/logo</item>D
+        <item>@drawable/logo</item>D
+        <item>@drawable/logo</item>D
+        <item>@drawable/logo</item>D
+        <item>@drawable/logo</item>D
+    </integer-array>
+
+    <string-array name="data_ingredients">
+        <item>1 ikat kangkung. 100 gram tauge. 1 buah jeruk limau. Air untuk merebus. Bahan Sambal: 5 siung bawang merah, 2 siung bawang putih, 1 ruas kencur, 1 buah tomat, 5 buah cabai merah, 5 buah cabai rawit. Terasi sesuai selera. Garam dan gula secukupnya</item>D
+        <item>4 cangkir bayam segar, dicuci dan dipotong kasar. 1/2 cangkir tomat cherry potong dua. 1/4 cangkir wortel parut. 1/4 cangkir mentimun, potong dadu kecil. 1/4 cangkir paprika merah, potong dadu kecil 2 sendok makan kenari, panggang dan cincang kasar Dressing: 2 sendok makan minyak zaitun extra virgin, 1 sendok makan cuka apel, 1 sendok teh madu, 1/2 sendok teh mustard Dijon. Garam dan lada secukupnya (sesuai selera)</item>D
+        <item>400 gram Brokoli. 200 gram Mix vegetables. 3 lembar Lettuce. 1 Kyuri potong-potong. 4 sdm Kewpi wijen sangria. Sejumput Garam</item>D
+        <item>1 ikat sayur bayam. 2 buah wortel, iris bulat. 3 siung bawang putih, iris tipis. 2 siung bawang merah, iris tipis. 3 ruas jari rempah kunci, kupas dan geprek. Garam dan gula secukupnya. Air secukupnya</item>D
+        <item>3 potong ikan bandeng yang sudah dibersihkan. 2 bawang putih kupas, geprek. 3 bawang merah kupas (besar), iris-iris. 2 buah tomat, buang bijinya, masing\" dipotong kotak jadi 8. 1/2 sdt kunyit bubuk. 2 batang serai, geprek. 2 ruas jari jahe, geprek. 7 cabai rawit utuh (sesuai selera). 1 batang bawang daun, potong-potong. Kaldu jamur. 500 cc air. Garam sesuai selera</item>D
+        <item>1,5 lt air. 1kg ikan patin. 100gr nanas, potong-potong. 3 buah tomat merah, potong-potong. 3 buah tomat hijau, potong-potong. 8 buah cabai rawit. 2 sdm air asam Jawa. 1 sdm kecap manis. Gula pasir secukupnya. 1 genggam daun kemangi. Bumbu Halus: 5 buah cabai merah, 6 siung bawang merah, 1 ruas kunyit, Garam secukupnya, 1 sdm terasi. Bumbu Utuh: 5 lbr daun salam, 1 ruas jahe, geprek, 1 ruas lengkuas, geprek, 1 batang serai, geprek</item>D
+        <item>2 buah wortel, kupas dan potong-potong. 1 buah kentang, kupas dan potong-potong. 1 batang seledri, cincang halus. 1/2 buah bawang bombay, cincang halus. 2 siung bawang putih, cincang halus. 1 liter kaldu sayuran atau kaldu ayam rendah lemak (bisa diganti air). 1 sendok makan minyak sayur. Garam dan merica secukupnya</item>D
+        <item>200 gr Pakcoy. 100 gr jagung putren. 1 sdt maizena. 1 batang bawang daun. 1 sdm saus tiram. Secukupnya garam. Secukupnya merica. Secukupnya kaldu bubuk. Secukupnya minyak goreng. Secukupnya air. Bumbu iris : 5 Siung Bawang Putih, 7 Buah capeh rawit merah, 1 buah tomat</item>D
+        <item>1/2 kaleng tuna. 1 wortel, parut. 1 batang daun bawang, iris. 2 kotak tahu, hancurkan. 1 butir telur ayam. 3 siung bawang putih, haluskan. Secukupnya Lada dan garam</item>D
+        <item>250 gr ikan gabus. 1/2 Bawang Bombay. 2 siung Bawang merah. 1 siung Bawang putih. Jahe, Kunyit, Lengkuas, Sereh, Kemiri, Lada, Ketumbar. Cabai merah, cabai rawit sesuai selera. Garam secukupnya. Penyedap rasa sekucupnya</item>D
+    </string-array>
+
+    <string-array name="data_steps">
+        <item>1. Potong-potong kangkung ambil daunnya. 2. Kemudian cuci kangkung dan taugenya. 3. Rebus kangkung dan tauge secara terpisah. 4. Jangan terlalu lama agar kangkung masih terasa gurih. 5. Haluskan semua bahan sambal, kemudian tumis dengan sedikit minyak. 6. Tumis hingga harum dan tanak. Jika sudah matikan kompor. 7. Tata kangkung dan tauge di piring, kemudian siram dengan sambar di atasnya. 8. Kangkung Plecing Lombok siap dinikmati.</item>D
+        <item>1. Campur semua bahan salad dalam sebuah mangkuk besar. 2. Dalam mangkuk kecil, aduk rata semua bahan dressing hingga tercampur dengan baik. 3. Tuangkan dressing di atas salad dan aduk perlahan hingga salad terlapisi dengan baik oleh dressing.</item>D
+        <item>1. Persiapkan semua bahan2 nya. 2. Rendam brokoli dgn air garam setelah itu tiriskan rebus sebentar. 3. Mix vegetables juga direbus sebentar. 4. Campurkan semua bahan lalu beri kewpi wijen sangrai aduk hingga merata. 5. Sajikan.</item>D
+        <item>1 ikat sayur bayam. 2 buah wortel, iris bulat. 3 siung bawang putih, iris tipis. 2 siung bawang merah, iris tipis. 3 ruas jari rempah kunci, kupas dan geprek. Garam dan gula secukupnya. Air secukupnya</item>D
+        <item>1. Siapkan 500 cc air dalam panci, tambahkan sereh, jahe, bawang merah, bawang putih, kunyit bubuk dan cabe rawit utuh. 2. Nyalakan api, didihkan dengan api besar agar cepat matang. 3. Setelah mendidih dan air agak menyusut, masukkan potongn ikan, tomat, bawang daun, kaldu jamur, garam(sesuai selera). 4. Masak dan diamkan dalam keadaan mendidih selama 3 menit.--Matikan api, sup ikan siap disajikan.</item>D
+        <item>1. Bersihkan ikan dan potong menjadi beberapa bagian sesuai selera. 2. Tumis bumbu yang telah dihaluskan dengan sedikit minyak. 3. Tambahkan bumbu utuh seperti jahe, lengkuas, daun salam, dan serai. 4. Tumis hingga harum. 5. Rebus air hingga mendidihkan, masukkan bumbu tumis ke dalam air rebus. 6. Tambahkan tomat, cabai, nanas dan ikan patin. 7. Masak hingga ikan matang. 8. Masukkan air asam Jawa, kecap manis dan gula. 9. Masak hingga mendidih. 10. Tambahkan kemangi, aduk-aduk. 11. Jika sudah matang, angkat dan matikan api. 12. Pindang patin nanas siap disajikan.</item>D
+        <item>1. Panaskan minyak sayur dalam panci. 2. Tumis bawang bombay dan bawang putih hingga harum. 3. Tambahkan wortel dan kentang. 4. Aduk rata dan masak sebentar. 5. Tuangkan kaldu sayuran atau kaldu ayam ke dalam panci. 6. Masak hingga wortel dan kentang menjadi lembut. 7. Tambahkan seledri, garam, dan merica secukupnya untuk memberikan rasa. 8. Biarkan sop mendidih dan cek rasa, sesuaikan bumbu jika diperlukan. 9. Setelah matang, angkat dan sajikan sop wortel hangat.</item>D
+        <item>1. Siapkan air mendidih, masukkan pakcoy sebentar saja. 2. Lalu angkat dan masukkan ke dalam air es, supaya warnanya tetap cantik. 3. Iris-iris Jagung Putren sesuai selera, rebus sebentar. 4. Siangi Jamur Shimeji. 5. Tumis bawang putih di minyak panas, sampai berubah warna kecoklatan dengan api kecil. 6. Masukkan irisan tomat, cabe rawit dan daun bawang. 7. Tambahkan sedikit air. 8. Tambahkan bumbu: garam, merica, gula pasir, kaldu bubuk dan saus tiram. 9. Masukkan jagung putren dan jamur shimeji, diamkan sampai matang dan bumbu menyerap. 10. Terakhir, masukkan air maizena dan tes rasa. 11. Tata pakcoy, siram dengan kuah jamur.</item>D
+        <item>1. Di dalam loyang, Campur tahu yg sudah dihancurkan dengan wortel yg sudah diparut, daun bawang, bawang putih halus, garam, lada, ikan tuna kaleng. 2. Aduk rata dan cicipi rasa. 3. Masukkan telur yg sudah dikocok, aduk rata. Kukus hingga matang di api kecil. 4. Hidangkan. Mudah yaaa. Selamat mencoba.</item>D
+        <item>1. Potong ikan lalu cuci hingga bersih. 2. Siapkan bumbu kemudian di uleg hingga halus. 3. Geprek lengkuas, jahe dan serai. 4. Aduk bumbu yang telah halus dengan ikan diamkan beberapa saat untuk marinasi bumbu. 5. Siapkan daun pisang untuk membungkus ikan. 6. Kukus hingga matan 20-30 menit. 7. Pepes sudah matang dan siap dinikmati.</item>D
+    </string-array>
+
+    <string-array name="data_khasiat">
+        <item>Kandungan kalium pada kangkung bermanfaat dalam mengatur serta menurunkan tekanan darah, sehingga kangkung menjadi salah satu makanan yang baik untuk penderita tekanan darah tinggi. Selain untuk menurunkan tekanan darah, kalium juga bermanfaat dalam mengatur keseimbangan cairan tubuh.</item>D
+        <item>Kandungan Kalium: Kalium dapat membantu mengendalikan tekanan darah dengan mengurangi efek natrium pada pembuluh darah. Serat Tinggi: Salad bayam yang mengandung bayam segar memberikan serat yang tinggi. Serat dapat membantu mengontrol tekanan darah dengan meningkatkan kesehatan pembuluh darah dan mengurangi kolesterol. Vitamin C dan Antioksidan: Kandungan vitamin C dan antioksidan dalam bayam dapat membantu melawan radikal bebas dan menjaga kesehatan pembuluh darah. Ini dapat mendukung fungsi kardiovaskular yang sehat. Rendah Sodium: Salad bayam dapat disiapkan dengan bahan-bahan rendah sodium untuk membantu mengontrol tekanan darah. Mengurangi Risiko Penyakit Jantung: Kandungan nutrisi dalam bayam, seperti folat, magnesium, dan vitamin K, dapat membantu mengurangi risiko penyakit jantung, yang sering kali terkait dengan hipertensi.</item>D
+        <item>Manfaat brokoli sebagai makanan untuk hipertensi diperoleh dari tingginya kandungan flavonoid, senyawa bersifat antioksidan yang mampu melemaskan pembuluh darah sehingga tekanan darah dapat menurun.</item>D
+        <item>Selain bermanfaat bagi kesehatan mata, wortel juga sangat dianjurkan sebagai makanan untuk hipertensi. Wortel kaya akan senyawa fenolik yang berfungsi untuk melindungi pembuluh darah dan menjaga tekanan darah.</item>D
+        <item>Ikan bandeng menjadi ikan yang baik untuk penderita darah tinggi. Kandungan asam lemak omega 3 sekitar 1,63 gram per 100 gramnya.</item>D
+        <item>lahan ikan menjadi salah satu pilihan makanan terbaik untuk penderita darah tinggi. Pasalnya, ikan merupakan sumber asam lemak omega 3 atau minyak ikan. Asam lemak tak jenuh ganda ini menurut beberapa penelitian terbukti dapat menurunkan tekanan darah, yang menjadi tujuan pengobatan dari hipertensi</item>D
+        <item>Vitamin dan Mineral: Wortel kaya akan vitamin A, yang baik untuk kesehatan mata, serta mengandung vitamin C dan K, serta potassium dari kentang yang baik untuk kesehatan jantung. Serat: Kandungan serat dalam wortel membantu menjaga kesehatan pencernaan. Antioksidan: Wortel mengandung antioksidan, seperti beta-karoten, yang dapat membantu melindungi sel-sel dari kerusakan. Kaldu Sayuran: Kaldu sayuran mengandung nutrisi tambahan dan memberikan rasa lezat pada sop.</item>D
+        <item>Jamur shimeji ini terbukti banyak manfaatnya, salah satunya memiliki sifat antiaterosklerotik, yang berarti dapat mengurangi pembentukan plak dalam pembuluh arteri, mengurangi resiko stroke dan menurunkan kolesterol. Dan banyak lagi manfaat lainnya.</item>D
+        <item>Berkat kandungan asam lemak omega-3 yang tinggi, ikan tuna dapat bermanfaat untuk menjaga kesehatan jantung, mengurangi risiko terjadinya demensia, menjaga kesehatan tulang, mencegah anemia, membantu penurunan berat badan, mencegah kanker.</item>D
+        <item>Seperti yang dipaparkan dalam penelitian Jurnal Gizi Klinik Indonesia (2016), albumin yang terkandung dalam ikan gabus memiliki fungsi sebagai antioksidan , mempertahankan kondisi integritasmikrovaskular, memodulasi inflamasi, dan sebagai antikoagulan ternyata memiliki hubungan bermakna dengan peningkatan gizi pasien stroke.</item>D
+    </string-array>
+
 </resources>
