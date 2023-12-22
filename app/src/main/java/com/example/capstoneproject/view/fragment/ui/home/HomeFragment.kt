@@ -3,6 +3,7 @@ package com.example.capstoneproject.view.fragment.ui.home
 import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
+import android.icu.lang.UCharacter.VerticalOrientation
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -50,9 +51,11 @@ class HomeFragment : Fragment() {
 
         requireActivity().actionBar?.hide()
 
-        _binding?.rekomenddasi1?.layoutManager = LinearLayoutManager(context)
-        _binding?.rekomendasi2?.layoutManager = LinearLayoutManager(context)
+        val layoutManager1 : RecyclerView = view.findViewById(R.id.rekomenddasi_1)
+        layoutManager1.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
 
+        val layoutManager2 : RecyclerView = view.findViewById(R.id.rekomendasi_2)
+        layoutManager2.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
 
 
 //        val textView: TextView = binding.textHome
@@ -62,22 +65,22 @@ class HomeFragment : Fragment() {
         rvRekom = view.findViewById(R.id.rekomenddasi_1)
         rvRekom.setHasFixedSize(true)
         list.addAll(getListRekom1())
-        showRecyclerList()
+        showRecyclerList(layoutManager1, getListRekom1())
 
-        rvRekom = view.findViewById(R.id.rekomenddasi_1A)
-        rvRekom.setHasFixedSize(true)
-        list.addAll(getListRekom1())
-        showRecyclerList()
-
-        rvRekom = view.findViewById(R.id.rekomenddasi_1B)
-        rvRekom.setHasFixedSize(true)
-        list.addAll(getListRekom1())
-        showRecyclerList()
-
+//        rvRekom = view.findViewById(R.id.rekomenddasi_1A)
+//        rvRekom.setHasFixedSize(true)
+//        list.addAll(getListRekom1())
+//        showRecyclerList()
+//
+//        rvRekom = view.findViewById(R.id.rekomenddasi_1B)
+//        rvRekom.setHasFixedSize(true)
+//        list.addAll(getListRekom1())
+//        showRecyclerList()
+//
         rvRekom = view.findViewById(R.id.rekomendasi_2)
         rvRekom.setHasFixedSize(true)
         list.addAll(getListRecom())
-        showRecyclerList()
+        showRecyclerList(layoutManager2, getListRecom())
 
         return view
 
@@ -105,10 +108,9 @@ class HomeFragment : Fragment() {
         return listRekom
     }
 
-    private fun showRecyclerList() {
-        rvRekom.layoutManager = LinearLayoutManager(requireContext())
-        val listRecomAdapter = ListRecomAdapter(list)
-        rvRekom.adapter = listRecomAdapter
+    private fun showRecyclerList(recyclerView: RecyclerView, itemList: ArrayList<Rekom>) {
+        recyclerView.hasFixedSize()
+        recyclerView.adapter = ListRecomAdapter(itemList)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
