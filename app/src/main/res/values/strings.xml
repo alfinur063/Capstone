@@ -137,16 +137,16 @@ Kami harap Term and Condition ini dapat memberikan informasi yang jelas dan leng
     </string-array>
 
     <integer-array name="data_image">
-        <item>@drawable/logo</item>D
-        <item>@drawable/logo</item>D
-        <item>@drawable/logo</item>D
-        <item>@drawable/logo</item>D
-        <item>@drawable/logo</item>D
-        <item>@drawable/logo</item>D
-        <item>@drawable/logo</item>D
-        <item>@drawable/logo</item>D
-        <item>@drawable/logo</item>D
-        <item>@drawable/logo</item>D
+        <item>@drawable/food1</item>D
+        <item>@drawable/food2</item>D
+        <item>@drawable/food3</item>D
+        <item>@drawable/food4</item>D
+        <item>@drawable/food5</item>D
+        <item>@drawable/food6</item>D
+        <item>@drawable/food7</item>D
+        <item>@drawable/food1</item>D
+        <item>@drawable/food2</item>D
+        <item>@drawable/food3</item>D
     </integer-array>
 
     <string-array name="data_ingredients">
@@ -202,9 +202,9 @@ Kami harap Term and Condition ini dapat memberikan informasi yang jelas dan leng
     </string-array>
 
     <integer-array name="rekom_image">
-        <item>@drawable/logo</item>D
-        <item>@drawable/logo</item>D
-        <item>@drawable/logo</item>D
+        <item>@drawable/food1</item>D
+        <item>@drawable/food2</item>D
+        <item>@drawable/food3</item>D
     </integer-array>
 
 </resources>
