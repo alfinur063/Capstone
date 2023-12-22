@@ -99,7 +99,7 @@ class HomeFragment : Fragment() {
 
     private fun getListRecom(): ArrayList<Rekom> {
         val dataName = resources.getStringArray(R.array.rekom_name)
-        val dataPhoto = resources.obtainTypedArray(R.array.rekom_image)
+        val dataPhoto = resources.obtainTypedArray(R.array.rekom_image2)
         val listRekom = ArrayList<Rekom>()
         for (i in dataName.indices) {
             val rekom = Rekom(dataName[i], dataPhoto.getResourceId(i, -1))

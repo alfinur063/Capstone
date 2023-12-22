@@ -28,6 +28,8 @@ class SplashScreen : AppCompatActivity() {
 
         val timeSplashScreen = 2000L
 
+        supportActionBar?.hide()
+
         Handler(Looper.getMainLooper()).postDelayed({
             var intent = Intent(this, WelcomeActivity::class.java)
             viewModel.getSession().observe(this){
